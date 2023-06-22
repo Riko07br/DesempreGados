@@ -27,5 +27,8 @@ use App\Models\Listing;
 //Get all unempolyment listings
 Route::get('/', [ListingController::class, 'index']);
 
+// Show create form
+Route::get('/listing/create', [ListingController::class, 'create']);
+
 //Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
