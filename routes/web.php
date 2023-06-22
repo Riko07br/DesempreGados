@@ -15,8 +15,17 @@ use App\Models\Listing;
 |
 */
 
+// Common Resource Routes:
+// index - Show all
+// show - Show single
+// create - Show form to create new
+// store - Store new
+// edit - Show form to edit
+// update - Update
+// destroy - Delete  
+
 //Get all unempolyment listings
 Route::get('/', [ListingController::class, 'index']);
 
-//Find specific unempolyment
+//Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
