@@ -30,5 +30,8 @@ Route::get('/', [ListingController::class, 'index']);
 // Show create form
 Route::get('/listing/create', [ListingController::class, 'create']);
 
+// Store listing
+Route::post('/listing', [ListingController::class, 'store']);
+
 //Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
