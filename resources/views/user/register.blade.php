@@ -43,7 +43,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="password2" class="inline-block text-lg mb-2">
+                <label for="password_confirmation" class="inline-block text-lg mb-2">
                     Confirme a senha
                 </label>
                 <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password_confirmation"
