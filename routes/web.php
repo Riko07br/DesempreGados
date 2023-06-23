@@ -27,11 +27,17 @@ use App\Models\Listing;
 //Get all unempolyment listings
 Route::get('/', [ListingController::class, 'index']);
 
-// Show create form
+//Show create form
 Route::get('/listing/create', [ListingController::class, 'create']);
 
-// Store listing
+//Store listing
 Route::post('/listing', [ListingController::class, 'store']);
+
+//Edit listing - show form
+Route::get('/listing/{listing}/edit', [ListingController::class, 'edit']);
+
+//Edit listing - submit form
+Route::put('/listing/{listing}', [ListingController::class, 'update']);
 
 //Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);

@@ -22,10 +22,12 @@ class ListingController extends Controller {
         ]);
     }
 
+    //create new listing
     public function create() {
         return view('listings.create');
     }
 
+    //store listing to db
     public function store(Request $request) {
         $formFields = $request->validate([
             'title' => 'required',
@@ -44,5 +46,31 @@ class ListingController extends Controller {
         Listing::create($formFields);
 
         return redirect('/')->with('success', 'Criação da DesVaga bovina bem sucedida!');
+    }
+
+    //edit listing on db
+    public function edit(Listing $listing) {
+        return view('listings.edit', ['listing' => $listing]);
+    }
+
+    //uptade listing on db
+    public function update(Request $request, Listing $listing) {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'],
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        if ($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $listing->update($formFields);
+
+        return back()->with('success', 'DesVaga bovina atualizada!');
     }
 }
