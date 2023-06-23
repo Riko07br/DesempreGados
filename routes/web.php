@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ListingController;
-use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ use App\Models\Listing;
 // update - Update
 // destroy - Delete  
 
-//Get all unempolyment listings
+//Get all unemployment listings
 Route::get('/', [ListingController::class, 'index']);
 
 //Show create form
@@ -44,3 +45,9 @@ Route::delete('/listing/{listing}', [ListingController::class, 'destroy']);
 
 //Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
+
+//Show register form
+Route::get('/register', [UserController::class, 'create']);
+
+//Store user
+Route::post('/user', [UserController::class, 'store']);
