@@ -39,5 +39,8 @@ Route::get('/listing/{listing}/edit', [ListingController::class, 'edit']);
 //Edit listing - submit form
 Route::put('/listing/{listing}', [ListingController::class, 'update']);
 
+//Delete listing
+Route::delete('/listing/{listing}', [ListingController::class, 'destroy']);
+
 //Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
