@@ -34,7 +34,7 @@
                     <span class="font-bold uppercase">Olá, {{ auth()->user()->name }}</span>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                    <a href="/listing/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                         Gerencie os DesEmpregos</a>
                 </li>
                 <li>

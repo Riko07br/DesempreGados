@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller {
 
@@ -43,6 +44,8 @@ class ListingController extends Controller {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
+        $formFields['user_id'] = auth()->id();
+
         Listing::create($formFields);
 
         return redirect('/')->with('success', 'Criação da DesVaga bovina bem sucedida!');
@@ -55,6 +58,12 @@ class ListingController extends Controller {
 
     //uptade listing on db
     public function update(Request $request, Listing $listing) {
+
+        //check user
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required'],
@@ -69,8 +78,6 @@ class ListingController extends Controller {
             $formFields['logo'] = $request->file('logo')->store('logos', 'public');
         }
 
-        $formFields['user_id'] = auth()->id();
-
         $listing->update($formFields);
 
         return back()->with('success', 'DesVaga bovina atualizada!');
@@ -78,8 +85,19 @@ class ListingController extends Controller {
 
     //delete listing from db
     public function destroy(Listing $listing) {
+
+        //check user
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+
         $listing->delete();
 
         return redirect('/')->with('success', 'DesVaga exluida!');
+    }
+
+    //manage listings
+    public function manage() {
+        return view('listings.manage', ['listings' => auth()->user()->listings()->get()]);
     }
 }

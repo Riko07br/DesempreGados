@@ -44,6 +44,9 @@ Route::put('/listing/{listing}', [ListingController::class, 'update'])->middlewa
 //Delete listing
 Route::delete('/listing/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
+//Manage listings
+Route::get('/listing/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 //Find specific unemployment
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
 
