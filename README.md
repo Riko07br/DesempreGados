@@ -1,12 +1,12 @@
 # Projeto DesempreGados
 
-## App de listagem de empregos desenvolvido no framework Laravel
-
-<p  align="center">
-<img align="center" src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" />
-<img align="center" src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" />
-<img align="center" src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" />
+<p>
+    <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" />
+    <img src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" />
+    <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white" />
 </p>
+
+## App de listagem de empregos desenvolvido no framework Laravel
 
 Um app para que bovinos possam ser desempregados, criado a partir de uma piada, este projeto realizado para aprender o framework Laravel seguindo o tutorial "[Laravel From Scratch 2022](https://www.youtube.com/watch?v=MYyJ4PuL4pY)"
 
@@ -30,6 +30,7 @@ O app possui funcionalidades básicas (CRUD) para as listagens de emprego:
 Também foi implementada a criação de usuários e autenticação com e-mail e senha.
 
 Este é o mapa do app, onde as páginas são os retângulos e os hexágonos são ações que podem ser realizadas.
+<img width="400" src="https://github.com/Riko07br/DesempreGados/assets/65051970/0d373486-3d8b-481f-b832-a16a1a7d4147" />
 
 ## Como usar
 
