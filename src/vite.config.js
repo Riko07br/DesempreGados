@@ -8,4 +8,13 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        host: "vite",
+        port: 5173,
+        hmr: {
+            port: 5173,
+            clientPort: 5173,
+            host: "localhost",
+        },
+    },
 });
